@@ -1,3 +1,3 @@
-# project
+# Personal CV Card
 
-a [Sails](http://sailsjs.org) application
+This is my personal portfolio made with [Sails](http://sailsjs.org).
