@@ -8,7 +8,8 @@
             <h2>FALA COMIGO :-)</h2>
         </div>
 
-        <form class='contact-form' id='contact-form' method='post' data-toggle='validator'>
+        <form class='contact-form' action="<%=sails.getUrlFor('HomeController.contact')%>" id='contact-form' method='post' data-toggle='validator'>
+            <input type='hidden' name='_csrf' value='<%= _csrf %>'>
 
             <div id='contact-form-result'></div>
 

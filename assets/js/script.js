@@ -129,13 +129,20 @@ $(function() {
         $body.removeClass('show-menu');
     });
 
-
-    /*=========================================================================
-    	Contact Form (NOT WORKING IN DEMO ONLY)
-    =========================================================================*/
-    $('#contact-form').validator().on('submit', function(e) {
+    $('#contact-form').on('submit', function(e) {
         if (!e.isDefaultPrevented()) {
             e.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                url: $(this).attr('action'),
+                data: $(this).serializeArray(),
+                dataType: 'json',
+                success: function(res) {
+                    console.log(res);
+                },
+            });
+
             var $this = $(this),
                 //You can edit alerts here
                 alerts = {

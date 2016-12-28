@@ -1,4 +1,5 @@
 module.exports.routes = {
-    '/': 'HomeController.index',
-    '/portfolio/:shortcut': 'PortfolioController.index',
+    'get /': 'HomeController.index',
+    'post /contact': 'HomeController.contact',
+    'get /portfolio/:shortcut': 'PortfolioController.index',
 };
