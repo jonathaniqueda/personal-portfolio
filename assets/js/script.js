@@ -158,6 +158,7 @@ $(function() {
                                             </div>";
 
                                 $('#contact-form-result').append(html);
+                                $('#contact-form').trigger('reset');
                             }
                         },
                         error: function(e) {
@@ -198,7 +199,6 @@ $(function() {
                         },
                         complete: function() {
                             $('btn-custom').html('enviar');
-                            $('#contact-form').trigger('reset');
                         }
                     });
                 }
