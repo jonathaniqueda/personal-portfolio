@@ -15,17 +15,17 @@ module.exports = {
     },
 
     contact: function(req, res) {
-        var email = Email.create(req.body).exec(function(err, records) {
+        Contact.create(req.body.contact).exec(function(err, contact) {
             if (err) {
-                console.log(err.Errors);
-                // return res.serverError(ResponseMessageService.modelErrorReturn(err));
+                return res.json(err.status, ResponseMessageService.modelErrorReturn(err, 'contact'));
             }
 
-            // sails.log('Record\'s id is:', records.id);
-        });
-
-        return ResponseMessageService.pattern('success', '', {
-            sended: true,
+            if (contact) {
+                MailerService.sendContactEmail(contact);
+                return res.json(ResponseMessageService.pattern('success', '', {
+                    sended: true,
+                }));
+            }
         });
     },
 };

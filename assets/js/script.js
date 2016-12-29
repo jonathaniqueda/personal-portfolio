@@ -134,32 +134,75 @@ $(function() {
             e.preventDefault();
 
             $.ajax({
-                type: "POST",
-                url: $(this).attr('action'),
-                data: $(this).serializeArray(),
+                type: "GET",
+                url: '/csrfToken',
                 dataType: 'json',
-                success: function(res) {
-                    console.log(res);
-                },
-            });
+                success: function(data) {
+                    var inputs = $('#contact-form').serializeArray();
+                    inputs[inputs.length] = {
+                        name: "_csrf",
+                        value: data._csrf
+                    };
 
-            var $this = $(this),
-                //You can edit alerts here
-                alerts = {
-                    success: "<div class='form-group' >\
-						<div class='alert alert-success' role='alert'> \
-							<strong>Mesagem enviada com sucesso!</strong> Vou entrar em contato com você daqui a pouco!\
-						</div>\
-					</div>",
-                    error: "<div class='form-group' >\
-						<div class='alert alert-danger' role='alert'> \
-							<strong>Oops!</strong> Desculpa, algum erro aconteceu. Tenta recarregar a página e se continuar me manda uma mensagem no WhatsApp: 21-9-8284-1840.\
-						</div>\
-					</div>"
-                };
-            $('#contact-form-result').html(alerts.success);
-            $('#contact-form').trigger('reset');
-            $('#contact-form .used').removeClass('used');
+                    $.ajax({
+                        type: "POST",
+                        url: $('#contact-form').attr('action'),
+                        data: inputs,
+                        dataType: 'json',
+                        success: function(res) {
+                            if (res.status === 'success') {
+                                var html = "<div class='form-group' >\
+                                              <div class='alert alert-success' role='alert'> \
+                                              <strong>Mesagem enviada com sucesso!</strong> Vou entrar em contato com você daqui a pouco!\
+                                              </div>\
+                                            </div>";
+
+                                $('#contact-form-result').append(html);
+                            }
+                        },
+                        error: function(e) {
+                            var asJson = e.responseJSON;
+                            if (asJson.status === 'error') {
+                                $.each(asJson.msg, function(k, v) {
+                                    var splitKey = k.split('.');
+
+                                    var input = $("input[name='" + splitKey[0] + "[" + splitKey[1] + "]'");
+
+                                    if (input.length < 1) {
+                                        var input = $("textarea[name='" + splitKey[0] + "[" + splitKey[1] + "]'");
+                                    }
+
+                                    if (input.length < 1) {
+                                        var input = $("select[name='" + splitKey[0] + "[" + splitKey[1] + "]'");
+                                    }
+
+                                    input.parent().parent().append('<div class="help-block with-errors" style="margin-top: 10px; color:red;">' + v + '</div>');
+                                });
+
+                                var html = "<div class='form-group' >\
+                                                <div class='alert alert-danger' role='alert'> \
+                                                <strong>Oops!</strong> Desculpa, algum erro aconteceu. Tenta recarregar a página e se continuar me manda uma mensagem no WhatsApp: 21-9-8284-1840.\
+                                                </div>\
+                                            </div>";
+
+                                $('#contact-form-result').append(html);
+                            }
+                        },
+                        beforeSend: function() {
+                            $('btn-custom').html('enviando...');
+                            $('.with-errors').remove();
+
+                            if ($('#contact-form-result').children('.form-group').length > 0) {
+                                $('#contact-form-result').children('.form-group').remove();
+                            }
+                        },
+                        complete: function() {
+                            $('btn-custom').html('enviar');
+                            $('#contact-form').trigger('reset');
+                        }
+                    });
+                }
+            });
         }
     });
 });

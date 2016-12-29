@@ -23,11 +23,25 @@ module.exports = {
         },
         subject: {
             type: 'string',
-            required: false
+            required: true
         },
         msg: {
             type: 'text',
             required: true
+        },
+    },
+    validationMessages: {
+        name: {
+            required: 'Você precisa digitar um nome válido :-('
+        },
+        email: {
+            required: 'Você precisa digitar um e-mail válido :-('
+        },
+        subject: {
+            required: 'Você precisa digitar um assunto válido :-('
+        },
+        msg: {
+            required: 'Você precisa digitar uma mensagem válida :-('
         },
     }
 };
