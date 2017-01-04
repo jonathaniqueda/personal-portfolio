@@ -55,7 +55,11 @@ $(function() {
         /*========================================
         	Portfolio Items
         ==========================================*/
-        $('.portfolio-items').shuffle();
+
+        $('.portfolio-items').owlCarousel({
+            items: 1,
+            autoHeight: false
+        });
 
         /*========================================
         	AnimateOnScroll
@@ -93,30 +97,30 @@ $(function() {
     /*========================================
     	Portfolio Items Ripple Effect
     ==========================================*/
-    $('.portfolio-items > li > .inner').each(function() {
-        var $this = $(this),
-            _w = $this.outerWidth(),
-            _h = $this.outerHeight(),
-            _s = _w > _h ? _w : _h,
-            _s = _s * 2.6;
-        $this.append('<div class="ripple" ></div>');
-        $this.find('.ripple').css({
-            height: _s,
-            width: _s
-        });
-    }).on('mouseenter', function(e) {
-        var $this = $(this),
-            _s = parseInt($this.find('.ripple').css('height')),
-            _offset = $this.offset(),
-            _x = e.pageX - $this.offset().left,
-            _y = e.pageY - $this.offset().top,
-            _x = _x - (_s / 2),
-            _y = _y - (_s / 2);
-        $this.find('.ripple').css({
-            'top': _y,
-            'left': _x
-        });
-    });
+    // $('.portfolio-items > li > .inner').each(function() {
+    //     var $this = $(this),
+    //         _w = $this.outerWidth(),
+    //         _h = $this.outerHeight(),
+    //         _s = _w > _h ? _w : _h,
+    //         _s = _s * 2.6;
+    //     $this.append('<div class="ripple" ></div>');
+    //     $this.find('.ripple').css({
+    //         height: _s,
+    //         width: _s
+    //     });
+    // }).on('mouseenter', function(e) {
+    //     var $this = $(this),
+    //         _s = parseInt($this.find('.ripple').css('height')),
+    //         _offset = $this.offset(),
+    //         _x = e.pageX - $this.offset().left,
+    //         _y = e.pageY - $this.offset().top,
+    //         _x = _x - (_s / 2),
+    //         _y = _y - (_s / 2);
+    //     $this.find('.ripple').css({
+    //         'top': _y,
+    //         'left': _x
+    //     });
+    // });
 
     /*========================================
     	Menu Functions
