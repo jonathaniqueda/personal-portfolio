@@ -51,11 +51,7 @@ module.exports.connections = {
 
     prodMongoServer: {
         adapter: 'sails-mongo',
-        host: '127.0.0.1',
-        port: 27017,
-        user: '', //optional
-        password: '', //optional
-        database: 'portfolio_iqueda' //optional
+        url: process.env.MONGODB_URI
     },
 
 };

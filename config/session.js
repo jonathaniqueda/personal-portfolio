@@ -74,8 +74,8 @@ module.exports.session = {
      *                                                                          *
      ***************************************************************************/
 
-    adapter: 'mongo',
-    url: 'mongodb://:@127.0.0.1:27017/portfolio_iqueda', // user, password and port optional
+    adapter: 'connect-mongo',
+    url: process.env.MONGODB_URI
 
     /***************************************************************************
      *                                                                          *

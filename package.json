@@ -29,7 +29,7 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "if [$NODE_ENV == 'production']; then node app.js; else nodemon app.js; fi"
+    "start": "npm start"
   },
   "main": "app.js",
   "repository": {

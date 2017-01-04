@@ -6,7 +6,6 @@
  */
 
 module.exports = {
-    connection: 'prodMongoServer',
     attributes: {
         id: {
             type: 'integer',
