@@ -75,7 +75,7 @@ module.exports.session = {
      ***************************************************************************/
 
     adapter: 'mongo',
-    // url: 'mongodb://user:password@localhost:27017/dbname', // user, password and port optional
+    url: 'mongodb://:@45.55.79.241:27017/portfolio_iqueda', // user, password and port optional
 
     /***************************************************************************
      *                                                                          *
