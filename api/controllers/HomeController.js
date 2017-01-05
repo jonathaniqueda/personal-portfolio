@@ -10,7 +10,7 @@ module.exports = {
         return res.view('homepage/index', {
             layout: 'layout',
             bodyClass: 'blue',
-            title: 'Jonathan Iqueda - Desenvolvedor "The Mystical" Web'
+            title: 'Jonathan Iqueda - A Web Developer of Things'
         });
     },
 
