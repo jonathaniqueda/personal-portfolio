@@ -1,5 +1,3 @@
-var mozjpeg = require('imagemin-mozjpeg');
-
 module.exports = function(grunt) {
 
     grunt.config.set('imagemin', {
