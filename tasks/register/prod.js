@@ -18,7 +18,6 @@ module.exports = function(grunt) {
     'uglify',
     'cssmin',
     'imagemin',
-    'inline',
     'sails-linker:prodJs',
     'sails-linker:prodStyles',
     'sails-linker:devTpl',
