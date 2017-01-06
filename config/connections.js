@@ -31,10 +31,10 @@ module.exports.connections = {
 
     prodMongoServer: {
         adapter: 'sails-mongo',
-        host: 'mongodb.jonathaniqueda.com.br',
-        port: 27017,
-        user: 'jonathaniqueda01',
+        host: 'ds157078.mlab.com',
+        port: 57078,
+        user: 'iqueda',
         password: '123456',
-        database: 'jonathaniqueda01'
+        database: 'portfolio_iqueda'
     },
 };
