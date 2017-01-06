@@ -60,9 +60,9 @@ try {
 // Start server
 sails.lift(rc('sails'));
 
-console.log(process.env.NODE_ENV);
+console.log(process.env.MONGOLAB_URI);
 
-var environment = 'development';
+var environment = process.env.NODE_ENV;
 var dotenv = require('dotenv');
 
 dotenv.config({
