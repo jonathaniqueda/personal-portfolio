@@ -57,12 +57,14 @@ try {
     }
 }
 
+// Start server
+sails.lift(rc('sails'));
+
+console.log(process.env.NODE_ENV);
+
 var environment = 'development';
 var dotenv = require('dotenv');
 
 dotenv.config({
     path: 'config/env/' + environment + '.env'
 });
-
-// Start server
-sails.lift(rc('sails'));
