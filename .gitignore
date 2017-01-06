@@ -1,6 +1,5 @@
 node_modules/
 .tmp/
-config/email.js
 
 # User-specific stuff:
 .idea/

@@ -1,4 +1,4 @@
 module.exports.models = {
-    connection: process.env.DB_CONNECTION || 'localDiskDb',
+    connection: process.env.DB_CONNECTION || 'prodMongoServer',
     migrate: 'safe'
 };
