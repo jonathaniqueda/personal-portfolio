@@ -31,10 +31,10 @@ module.exports.connections = {
 
     prodMongoServer: {
         adapter: 'sails-mongo',
-        host: 'ds157078.mlab.com',
-        port: 57078,
-        user: 'iqueda',
-        password: '123456',
-        database: 'portfolio_iqueda'
+        host: 'ds157298.mlab.com',
+        port: 57298,
+        user: 'heroku_5sd7h28g',
+        password: '1ecmc5d9ht9lhnulnefkrcsi22',
+        database: 'heroku_5sd7h28g'
     },
 };
