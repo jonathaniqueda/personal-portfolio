@@ -22,6 +22,7 @@ module.exports = function(grunt) {
     'uglify',
     'cssmin',
     'imagemin',
+    'inline',
     'linkAssetsBuildProd',
     'clean:build',
     'copy:build'
