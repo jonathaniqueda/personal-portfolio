@@ -1,15 +1,13 @@
 module.exports = function(grunt) {
 
     grunt.config.set('imagemin', {
-        imagemin: {
-            dynamic: {
-                files: [{
-                    expand: true,
-                    cwd: 'assets/images',
-                    src: ['*.{png,jpg,gif}', '**/*.{png,jpg,gif}'],
-                    dest: '.tmp/public/images'
-                }]
-            }
+        dynamic: { // Another target
+            files: [{
+                expand: true, // Enable dynamic expansion
+                cwd: 'assets/images', // Src matches are relative to this path
+                src: ['**/*.{png,jpg,gif}'], // Actual patterns to match
+                dest: '.tmp/public/images' // Destination path prefix
+            }]
         }
     });
 
