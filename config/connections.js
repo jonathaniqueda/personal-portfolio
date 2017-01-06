@@ -51,7 +51,11 @@ module.exports.connections = {
 
     prodMongoServer: {
         adapter: 'sails-mongo',
-        url: process.env.MONGODB_URI
+        host: 'mongodb.jonathaniqueda.com.br',
+        port: 27017,
+        user: 'jonathaniqueda01',
+        password: '123456',
+        database: 'jonathaniqueda01'
     },
 
 };

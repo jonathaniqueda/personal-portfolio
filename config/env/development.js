@@ -19,6 +19,8 @@ module.exports = {
 
     models: {
         connection: 'localMongoServer'
-    }
+    },
+
+    MONGODB_URI: "mongodb://localhost/portfolio_iqueda"
 
 };

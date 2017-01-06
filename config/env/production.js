@@ -21,6 +21,8 @@ module.exports = {
         connection: 'prodMongoServer'
     },
 
+    MONGODB_URI: "'mongodb://jonathaniqueda01:123456@mongodb.jonathaniqueda.com.br/jonathaniqueda01",
+
     /***************************************************************************
      * Set the port in the production environment to 80                        *
      ***************************************************************************/
