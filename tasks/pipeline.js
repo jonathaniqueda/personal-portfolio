@@ -26,6 +26,14 @@ var cssFilesToInject = [
     'styles/style.css',
 ];
 
+// CSS files to inject in order
+//
+// (if you're using LESS with the built-in default config, you'll want
+//  to change `assets/styles/importer.less` instead.)
+var cssAdminFilesToInject = [
+    'bootstrap/css/bootstrap.min.css',
+    'styles/admin/style.css',
+];
 
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
@@ -46,6 +54,11 @@ var jsFilesToInject = [
     'js/script.js',
 ];
 
+// Client-side javascript files to inject in order
+// (uses Grunt-style wildcard/glob/splat expressions)
+var jsAdminFilesToInject = [
+    'js/admin/script.js',
+];
 
 // Client-side HTML templates are injected using the sources below
 // The ordering of these templates shouldn't matter.
@@ -79,12 +92,29 @@ module.exports.cssFilesToInject = cssFilesToInject.map(function(cssPath) {
     }
     return require('path').join('.tmp/public/', cssPath);
 });
+// Prefix relative paths to source files so they point to the proper locations
+// (i.e. where the other Grunt tasks spit them out, or in some cases, where
+// they reside in the first place)
+module.exports.cssAdminFilesToInject = cssAdminFilesToInject.map(function(cssPathAdmin) {
+    // If we're ignoring the file, make sure the ! is at the beginning of the path
+    if (cssPathAdmin[0] === '!') {
+        return require('path').join('!.tmp/public/admin/', cssPathAdmin.substr(1));
+    }
+    return require('path').join('.tmp/public/admin/', cssPathAdmin);
+});
 module.exports.jsFilesToInject = jsFilesToInject.map(function(jsPath) {
     // If we're ignoring the file, make sure the ! is at the beginning of the path
     if (jsPath[0] === '!') {
         return require('path').join('!.tmp/public/', jsPath.substr(1));
     }
     return require('path').join('.tmp/public/', jsPath);
+});
+module.exports.jsAdminFilesToInject = jsAdminFilesToInject.map(function(jsPathAdmin) {
+    // If we're ignoring the file, make sure the ! is at the beginning of the path
+    if (jsPathAdmin[0] === '!') {
+        return require('path').join('!.tmp/public/admin/', jsPathAdmin.substr(1));
+    }
+    return require('path').join('.tmp/public/admin/', jsPathAdmin);
 });
 module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPath) {
     // If we're ignoring the file, make sure the ! is at the beginning of the path

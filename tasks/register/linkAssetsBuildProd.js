@@ -13,7 +13,9 @@
 module.exports = function(grunt) {
   grunt.registerTask('linkAssetsBuildProd', [
     'sails-linker:prodJsRelative',
+    'sails-linker:prodAdminJsRelative',
     'sails-linker:prodStylesRelative',
+    'sails-linker:prodAdminStylesRelative',
     'sails-linker:devTpl',
     'sails-linker:prodJsRelativeJade',
     'sails-linker:prodStylesRelativeJade',

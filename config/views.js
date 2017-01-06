@@ -17,6 +17,6 @@ module.exports.views = {
         ext: 'ejs',
         fn: parsing
     },
-    layout: false,
+    layout: true,
     partials: false
 };
