@@ -1146,3 +1146,96 @@ footer .copyright {
 .purple .material-input>.form-control.used~label, .purple .material-input>.form-control:focus~label {
     color: #9C27B0;
 }
+
+
+/*==================================================
+	Sprite Images
+==================================================*/
+
+.png-img-home-api-gear, .png-img-home-api, .png-img-home-moip, .png-img-home-papdigital, .png-img-home-paypal, .png-img-integracao-unicodono, .png-img-unotraducoes, .png-img-rogerio-1 {
+    display: inline-block;
+    background: url('../images/sprite-png.png') no-repeat;
+    overflow: hidden;
+    text-indent: -9999px;
+    text-align: left;
+}
+
+.png-img-home-api-gear {
+    background-position: -0px -0px;
+    width: 213px;
+    height: 213px;
+}
+
+.png-img-home-api {
+    background-position: -0px -213px;
+    width: 213px;
+    height: 213px;
+}
+
+.png-img-home-moip {
+    background-position: -0px -426px;
+    width: 213px;
+    height: 213px;
+}
+
+.png-img-home-papdigital {
+    background-position: -0px -639px;
+    width: 213px;
+    height: 213px;
+}
+
+.png-img-home-paypal {
+    background-position: -0px -852px;
+    width: 213px;
+    height: 213px;
+}
+
+.png-img-integracao-unicodono {
+    background-position: -0px -1065px;
+    width: 213px;
+    height: 213px;
+}
+
+.png-img-unotraducoes {
+    background-position: -0px -1278px;
+    width: 213px;
+    height: 213px;
+}
+
+.png-img-rogerio-1 {
+    background-position: -0px -1491px;
+    width: 90px;
+    height: 90px;
+}
+
+.jpg-img-jonathan-serio, .jpg-img-jonathan-cool, .jpg-img-default, .jpg-img-lukas-mussoi {
+    display: inline-block;
+    background: url('../images/sprite-jpg.jpg') no-repeat;
+    overflow: hidden;
+    text-indent: -9999px;
+    text-align: left;
+}
+
+.jpg-img-jonathan-serio {
+    background-position: -1px -0px;
+    width: 612px;
+    height: 612px;
+}
+
+.jpg-img-jonathan-cool {
+    background-position: -1px -613px;
+    width: 220px;
+    height: 220px;
+}
+
+.jpg-img-default {
+    background-position: -222px -613px;
+    width: 90px;
+    height: 90px;
+}
+
+.jpg-img-lukas-mussoi {
+    background-position: -313px -613px;
+    width: 90px;
+    height: 90px;
+}

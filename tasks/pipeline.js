@@ -32,7 +32,7 @@ var cssFilesToInject = [
 var jsFilesToInject = [
 
     // Load sails.io before everything else
-    'js/dependencies/sails.io.js',
+    // 'js/dependencies/sails.io.js',
     'js/dependencies/jquery.min.js',
     'js/dependencies/smooth-scroll.min.js',
     'js/dependencies/jquery.shuffle.min.js',
